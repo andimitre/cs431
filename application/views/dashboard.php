@@ -55,7 +55,7 @@
                 <?php if($user['current_city']): ?>
                     <h2>Current: <?php echo $user['current_city'] . ', ' . $user['current_state']; ?></h2>
                 <?php endif; ?>
-
+            </div>
             <div>
                 <p>Wall Posts</p>
                 <form action="/index.php/message/send" method="POST">
@@ -82,27 +82,19 @@
                 </form>
 
             </div>
+        </div>
 
             <!--/#login.form-action-->
             <div id="friends" class="form-action hide">
-                <h4>Hello</h4>
-                <p>
-                    Here's all your friends
-                    <?php $username ?>
-                </p>
-                <form action="/register" method="POST">
-                    <ul>
-                        <li>
-                            <input type="text" placeholder="Username" />
-                        </li>
-                        <li>
-                            <input type="password" placeholder="Password" />
-                        </li>
-                        <li>
-                            <input type="submit" value="Sign Up" class="button" />
-                        </li>
-                    </ul>
-                </form>
+               <h1><?php echo $user['first_name'];?>'s Friends</h1>
+            
+                <?php if($user['friend_id']): ?>
+                    <h2>Friends: <?php echo $user['friend_id']; ?></h2>
+                <?php endif; ?>
+
+            <ul><?php foreach ($friends as $friend) {
+                    echo $friends['friend_id']; }?></ul>
+               
             </div>
             <!--/#register.form-action-->
             <div id="photos" class="form-action hide">
