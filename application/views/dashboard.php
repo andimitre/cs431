@@ -43,15 +43,30 @@
         </ul>
 
         <div id="wall" class="form-action show">
-                <h1>Welcome <?php echo $user['first_name'] . ' ' . $user['last_name']; ?></h1>
+            <div class="six">
+                <h1><?php echo $user['first_name'] . ' ' . $user['last_name']; ?></h1>
+                <img src="http://lorempixel.com/200/200/people" alt="photos">
+            </div>
 
-
-                <p>Wall Posts</p>
+            <div class="six">
+                <h1>Current <?php echo $user['hometown_city'] . ', ' . $user['hometown_state']; ?></h1>
                 
-                <form>
+
+            <div>
+                <p>Wall Posts</p>
+                <form action="/index.php/welcome/login" method="POST">
                     <ul>
-                        <input type="text" placeholder="How is " <?php $username ?>" feeling?" name="username"/>
+                        <input type="text" placeholder="How is <?php echo $user['first_name'];?> feeling?" name="username"/>
                         <input type="submit" value="Update Status" class="button" />
+                    </ul>
+                </form>
+                <p></p>
+                <p></p>
+                <form action="" method="POST">
+                    <ul>
+                        <?php foreach($messages as $message): ?>
+                            <li><?php echo $message['text'] . ' ' . $message['created_time'] ?></li>
+                        <?php endforeach;?>                        
                     </ul>
                 </form>
 
