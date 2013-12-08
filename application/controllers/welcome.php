@@ -22,6 +22,14 @@ class welcome extends CI_Controller {
 	}
 
 	public function register(){
-		echo "REG";
+		if($this->input->post()){
+			$this->load->model('User');
+			$is_user_logged_in = $this->User->register($this->input->post());
+			if($is_user_logged_in){
+				echo "login";
+			} else {
+				echo "fail";
+			}
+		}
 	}
 }

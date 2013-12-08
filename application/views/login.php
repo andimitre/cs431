@@ -62,17 +62,15 @@
                     You should totally sign up for our super awesome service.
                     It's what all the cool kids are doing nowadays.
                 </p>
-                <form action="/register" method="POST">
-                    <ul>
-                        <li>
-                            <input type="text" placeholder="Username" />
-                        </li>
-                        <li>
-                            <input type="password" placeholder="Password" />
-                        </li>
-                        <li>
-                            <input type="submit" value="Sign Up" class="button" />
-                        </li>
+                <form action="/index.php/welcome/register" method="POST">
+                    <ul>                       
+                        <li><input type="text" name="username" placeholder="Username" /> </li>                     
+                        <li><input type="text" name="firstname" placeholder="First Name" />  </li>                     
+                        <li><input type="text" name="lastname" placeholder="Last Name" />    </li>                   
+                        <li><input type="text" name="email" placeholder="Email"></li>
+                        <li><input name="password" type="password" placeholder="Password" />                 </li>       
+                        <li><input type="submit" value="Sign Up" class="button" /></li>
+                        
                     </ul>
                 </form>
             </div>
