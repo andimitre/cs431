@@ -43,8 +43,9 @@
         </ul>
 
         <div id="wall" class="form-action show">
-                <h4>Welcome</h4>
-                    <img src="" alt="Smileyface" height="42" width="42">
+                <h1>Welcome <?php echo $user['first_name'] . ' ' . $user['last_name']; ?></h1>
+
+
                 <p>Wall Posts</p>
                 
                 <form>
@@ -120,7 +121,6 @@
                 </form>
             </div>
         </div>
-    </div>
     <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
     <script class="cssdeck" src="/assets/js/cssdashboard.js"></script>
 </body>
