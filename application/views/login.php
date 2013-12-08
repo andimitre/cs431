@@ -15,6 +15,8 @@
 
     <!-- CSS
   ================================================== -->
+  <link rel="stylesheet" type="text/css" href="/assets/Flat-UI-master/css/flat-ui.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/cssdeck.css">
 
     <!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -30,9 +32,6 @@
                 </li>
                 <li>
                     <a href="#register">Register</a>
-                </li>
-                <li>
-                    <a href="#reset">Reset Password</a>
                 </li>
             </ul>
             <div id="login" class="form-action show">
@@ -78,6 +77,7 @@
         </div>
     </div>
     <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script class="cssdeck" src="/assets/js/cssdeck.js"></script>
 </body>
 </html>
 
