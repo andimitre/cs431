@@ -39,8 +39,9 @@ class welcome extends CI_Controller {
 		if($this->input->post()){
 			$user = $this->User->login($this->input->post());
 			if($user){
+				$ucid = $user['ucid'];
 				$this->session->set_userdata(array('user' => $user));
-				redirect('/welcome/dashboard/', 'refresh');
+				redirect("/welcome/dashboard/$ucid", 'refresh');
 			} else {
 				$this->session->set_userdata(array('error' => "Please Register Before logging in"));
 				redirect('/', 'refresh');
@@ -62,9 +63,10 @@ class welcome extends CI_Controller {
 		}
 	}
 
-	public function dashboard(){
+	public function dashboard($ucid){
 		$this->check_session();
-		$this->load->view('dashboard');
+		$data['user'] = $this->User->get($ucid);
+		$this->load->view('dashboard', $data);
 	}
 
 	public function logout(){
