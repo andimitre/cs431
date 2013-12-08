@@ -25,7 +25,8 @@ class Wall_message extends CI_Model {
    		$query = "SELECT m.*, u.first_name, u.last_name
 			FROM messages m
 			JOIN user u ON m.sender_id = u.user_id
-			where m.receiver_id = '$user_id'";
+			where m.receiver_id = '$user_id'
+			order by m.created_time desc";
    		$result = mysql_query($query);
    		
    		$messages = $this->mysql_fetch_all($result);
