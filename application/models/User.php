@@ -13,8 +13,8 @@ class User extends CI_Model {
 		$query = "SELECT u.*, l.city as hometown_city, l.state_code as hometown_state,
 			c.city as current_city, c.state_code as current_state
 			FROM user u 
-			JOIN location l  on u.hometown_id = l.location_id 
-			JOIN location c  on u.current_location_id = c.location_id 
+			left JOIN location l  on u.hometown_id = l.location_id 
+			left JOIN location c  on u.current_location_id = c.location_id 
 			WHERE u.ucid = '$ucid'";
 
    		$result = mysql_query($query);
