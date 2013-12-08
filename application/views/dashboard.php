@@ -58,9 +58,11 @@
 
             <div>
                 <p>Wall Posts</p>
-                <form action="/index.php/welcome/login" method="POST">
+                <form action="/index.php/message/send" method="POST">
                     <ul>
-                        <input type="text" placeholder="How is <?php echo $user['first_name'];?> feeling?" name="username"/>
+                        <input type="text" placeholder="How is <?php echo $user['first_name'];?> feeling?" name="message_text"/>
+                        <input type="hidden" name="sender_id" value="<?php echo $current_user['user_id'] ?>"/>
+                        <input type="hidden" name="receiver_id" value="<?php echo $user['user_id'] ?>"/>
                         <input type="submit" value="Update Status" class="button" />
                     </ul>
                 </form>
@@ -68,9 +70,14 @@
                 <p></p>
                 <form action="" method="POST">
                     <ul>
-                        <?php foreach($messages as $message): ?>
-                            <li><?php echo $message['text'] . ' ' . $message['created_time'] ?></li>
-                        <?php endforeach;?>                        
+                        <?php if($messages): ?>
+                            <?php foreach($messages as $message): ?>
+                                <div class="message">
+                                    <span>face</span>
+                                    <span><?php echo $message['text'] . ' ' . $message['created_time'] ?></span>
+                                </div>
+                            <?php endforeach;?>    
+                        <?php endif; ?>                    
                     </ul>
                 </form>
 

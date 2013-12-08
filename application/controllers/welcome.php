@@ -7,6 +7,7 @@ class welcome extends CI_Controller {
     	$this->load->helper('url');
     	$this->load->library('session');
     	$this->load->model('User');
+    	$this->load->model('Wall_message');
     }
 	
 
@@ -39,9 +40,9 @@ class welcome extends CI_Controller {
 		if($this->input->post()){
 			$user = $this->User->login($this->input->post());
 			if($user){
-				$ucid = $user['ucid'];
+				$user_id = $user['user_id'];
 				$this->session->set_userdata(array('user' => $user));
-				redirect("/welcome/dashboard/$ucid", 'refresh');
+				redirect("/welcome/dashboard/$user_id", 'refresh');
 			} else {
 				$this->session->set_userdata(array('error' => "Please Register Before logging in"));
 				redirect('/', 'refresh');
@@ -55,17 +56,25 @@ class welcome extends CI_Controller {
 			$this->load->model('User');
 			$user_id = $this->User->register($this->input->post());
 			if($user_id){
-				$this->session->set_userdata(array('success' => "Successfully Registered! Please log in"));
-				redirect('/', 'refresh');
+				$this->session->set_userdata(array('success' => "Successfully Registered! Please log in"));				
 			} else {
-				echo "fail";
+				$this->session->set_userdata(array('error' => "Error Registering! Please try again"));
 			}
+			redirect('/', 'refresh');
 		}
 	}
 
-	public function dashboard($ucid){
+	public function dashboard($user_id){
 		$this->check_session();
-		$data['user'] = $this->User->get($ucid);
+		if($user_id == null){
+			$this->session->set_userdata(array('error' => "Please Register Before logging in"));
+			redirect('/', 'refresh');
+		}
+		$data['user'] = $this->User->get($user_id);
+		$data['current_user'] = $this->session->userdata('user');
+
+		$data['messages'] = $this->Wall_message->get_for_user($user_id);
+
 		$this->load->view('dashboard', $data);
 	}
 

@@ -5,6 +5,19 @@ body {
   background: #ffffff;
   font-family: 'Roboto';
 }
+
+.message{
+  background: #ffffff;
+  border-radius: 2px;
+  border-style: solid;
+  border-color: #647eed;
+  border-width: 2px;
+  height:80px;
+  width:100%;
+  position: relative;
+  font-family: 'Roboto';
+
+}
 .flat-form {
   background: #647eed;
   margin: 25px auto;
