@@ -30,6 +30,7 @@ class welcome extends CI_Controller {
 
 	public function check_session(){
 		if(!$this->session->userdata("user")){
+			$this->session->set_userdata(array('error' => "You must be logged in to view this page!"));
 			redirect('/', 'refresh');
 		};
 	}
