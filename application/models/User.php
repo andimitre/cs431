@@ -2,21 +2,19 @@
 
 class User extends CI_Model {
 
-	   public function __construct() {
-            parent::__construct();
-            $this->load->library('encrypt');
-       }
+   	public function __construct() {
+        parent::__construct();
+        $this->load->library('encrypt');
+   	}
 
-	public function connect(){
-		$ucid = 'am484';
-		$password = 'vd0HngQMx';
-		$hostname = 'sql2.njit.edu';
-		$connect = mysql_connect($hostname , $ucid, $password);
-		if (!$connect){
-		    die('Unable to connect. Please try again! ' . mysql_error());
-		}
-		mysql_select_db($ucid);
-	}
+   	public function get($ucid){
+   		$this->connect();
+   		$query = "SELECT * FROM user where ucid = '$ucid';";
+   		$result = mysql_query($query);
+		$user = mysql_fetch_array($result, MYSQL_ASSOC);
+
+		return $user;
+   	}
 
 	public function login($userData){
 		$this->connect();
@@ -24,9 +22,9 @@ class User extends CI_Model {
 		$password =	$this->encrypt->sha1($userData['password']);	
 		$query = "SELECT * FROM user where ucid = '$username' and password = '$password';";
 		$result = mysql_query($query);
-		$result = mysql_fetch_array($result, MYSQL_ASSOC);
+		$user = mysql_fetch_array($result, MYSQL_ASSOC);
 		if($result){
-			return true;
+			return $user;
 		} else {
 			return false;
 		}
@@ -46,6 +44,17 @@ class User extends CI_Model {
 		} else {
 			return false;
 		}
+	}
+
+	public function connect(){
+		$ucid = 'am484';
+		$password = 'vd0HngQMx';
+		$hostname = 'sql2.njit.edu';
+		$connect = mysql_connect($hostname , $ucid, $password);
+		if (!$connect){
+		    die('Unable to connect. Please try again! ' . mysql_error());
+		}
+		mysql_select_db($ucid);
 	}
 
 }
