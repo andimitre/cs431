@@ -39,7 +39,7 @@
                     <a href="#events">Events</a>
                 </li>
             </ul>
-            <div id="friends" class="form-action show">
+            <div id="wall" class="form-action show">
                 <h4>Welcome "<?php $username ?>"</h4>
                 <img src="smiley.gif" alt="Smiley face" height="42" width="42">
                 <p>
@@ -47,21 +47,19 @@
                 </p>
                 <form action="/index.php/welcome/login" method="POST">
                     <ul>
-                        <li>
+                        
                             <input type="text" placeholder="How is "<?php $username ?>" feeling?" name="username"/>
-                        </li>
-                        <li>
-                            <input type="submit" value="Status" class="button" />
-                        </li>
+                            <input type="submit" value="Update Status" class="button" />
+                        
                     </ul>
                 </form>
             </div>
+            
             <!--/#login.form-action-->
-            <div id="register" class="form-action hide">
-                <h1>Register</h1>
+            <div id="friends" class="form-action hide">
+                <h4></h4>
                 <p>
-                    You should totally sign up for our super awesome service.
-                    It's what all the cool kids are doing nowadays.
+                    Here's all your friends "<?php $username ?>"
                 </p>
                 <form action="/register" method="POST">
                     <ul>
