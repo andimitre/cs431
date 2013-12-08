@@ -28,7 +28,7 @@
         <div class="flat-form">
             <ul class="tabs">
                 <li>
-                    <a href="#login" class="active">Login</a>
+                    <a href="#login" class="">Login</a>
                 </li>
                 <li>
                     <a href="#register">Register</a>
