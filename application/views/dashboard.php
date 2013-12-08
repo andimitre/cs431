@@ -47,10 +47,14 @@
                 <h1><?php echo $user['first_name'] . ' ' . $user['last_name']; ?></h1>
                 <img src="http://lorempixel.com/200/200/people" alt="photos">
             </div>
-
+            <p></p>
             <div class="six">
-                <h1>Current <?php echo $user['hometown_city'] . ', ' . $user['hometown_state']; ?></h1>
-                
+                <?php if($user['hometown_city']): ?>
+                    <h2>Hometown: <?php echo $user['hometown_city'] . ', ' . $user['hometown_state']; ?></h2>
+                <?php endif; ?>
+                <?php if($user['current_city']): ?>
+                    <h2>Current: <?php echo $user['current_city'] . ', ' . $user['current_state']; ?></h2>
+                <?php endif; ?>
 
             <div>
                 <p>Wall Posts</p>
