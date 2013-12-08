@@ -24,9 +24,9 @@ class User extends CI_Model {
 		$password =	$this->encrypt->sha1($userData['password']);	
 		$query = "SELECT * FROM user where ucid = '$username' and password = '$password';";
 		$result = mysql_query($query);
-		$result = mysql_fetch_array($result, MYSQL_ASSOC);
+		$user = mysql_fetch_array($result, MYSQL_ASSOC);
 		if($result){
-			return true;
+			return $user;
 		} else {
 			return false;
 		}

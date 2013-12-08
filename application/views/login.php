@@ -25,6 +25,11 @@
 <body>
 
     <div class="container">
+    	<?php if($error): ?>
+    		<div class="error"><h1><?php echo $error ?></h1></div>
+    	<?php elseif($success): ?>
+    		<div class="success"><h1><?php echo $success ?></h1></div>
+    	<?php endif; ?>
         <div class="flat-form">
             <ul class="tabs">
                 <li>

@@ -2,20 +2,45 @@
 @import url(http://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css);
 
 body {
-  background: #1a1a1a;
+  background: #ffffff;
   color: white;
   font-family: 'Roboto';
 }
 .flat-form {
-  background: #e74c3c;
+  background: #6495ED;
   margin: 25px auto;
   width: 390px;
   padding-bottom:25px;
   position: relative;
   font-family: 'Roboto';
 }
-.tabs {
+
+/*c0392b*/
+
+.error{
   background: #c0392b;
+  margin: 25px auto;
+  width: 300px;
+  padding:10px;
+  position: relative;
+  font-weight:bold;
+  text-align: center;
+  font-family: 'Roboto';
+}
+
+.success{
+  background: #2ECC71;
+  margin: 25px auto;
+  width: 300px;
+  padding:10px;
+  position: relative;
+  font-weight:bold;
+  text-align: center;
+  font-family: 'Roboto';
+}
+
+.tabs {
+  background: #647eed;
   height: 40px;
   margin: 0;
   padding: 0;
@@ -32,7 +57,7 @@ body {
   padding: 0;
 }
 .tabs a {
-  background: #c0392b;
+  background: #647eed;
   display: block;
   float: left;
   text-decoration: none;
@@ -50,7 +75,7 @@ body {
   text-align: center;
 }
 .tabs a.active {
-  background: #e74c3c;
+  background: #6495ED;
   border-right: none;
   -webkit-transition: all 0.5s linear;
 	-moz-transition: all 0.5s linear;
