@@ -68,19 +68,38 @@
                 </form>
                 <p></p>
                 <p></p>
-                <form action="" method="POST">
+
+                <div class="todo">
+
+                    <div class="todo-search">
+                        <h1>Wall Posts</h1>  
+                        <form action="/index.php/message/send" method="POST">
+                            <ul>
+                                <input class="todo-search-field" type="text" placeholder="How is <?php echo $user['first_name'];?> feeling?" name="message_text"/>
+                                <input type="hidden" name="sender_id" value="<?php echo $current_user['user_id'] ?>"/>
+                                <input type="hidden" name="receiver_id" value="<?php echo $user['user_id'] ?>"/>
+                                
+                            </ul>
+                            <input type="submit" value="Update Status" class="button" />
+                        </form>
+                        
+                    </div>    
                     <ul>
                         <?php if($messages): ?>
                             <?php foreach($messages as $message): ?>
-                                <div class="message">
-                                    <span>face</span>
-                                    <span><?php echo $message['text'] . ' ' . $message['created_time'] ?></span>
+                              <li class="">
+                                <div class="todo-icon fui-user">
                                 </div>
+                                <div class="todo-content">
+                                    <h4 class="todo-name"><?php echo $message['first_name'] . ' ' . $message['last_name'] ?></h4>
+                                    <h2 class="todo-name"><?php echo $message['text'] . ' ' . $message['created_time'] ?></h2>
+                                </div>
+                              </li>
                             <?php endforeach;?>    
-                        <?php endif; ?>                    
+                        <?php endif; ?>  
                     </ul>
-                </form>
-
+                    </div>
+                </div>
             </div>
         </div>
 
