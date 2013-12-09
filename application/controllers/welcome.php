@@ -76,6 +76,8 @@ class welcome extends CI_Controller {
 
 		$data['friends'] = $this->User->get_friends($user_id);
 
+		$data['photos'] = $this->User->get_albums($user_id);
+
 		$this->load->view('dashboard', $data);
 	}
 
