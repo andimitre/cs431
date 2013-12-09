@@ -64,6 +64,17 @@ class User extends CI_Model {
    		return $friends;
 	}
 
+	public function add_friend($user_id, $friend_id){
+		$this->connect();
+		$query = "INSERT into friends (user_id, friend_id) values('$user_id','$friend_id')";
+		$result = mysql_query($query);
+		if($result){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	public function connect(){
 		$ucid = 'am484';
 		$password = 'vd0HngQMx';

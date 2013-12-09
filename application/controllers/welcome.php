@@ -53,7 +53,6 @@ class welcome extends CI_Controller {
 
 	public function register(){
 		if($this->input->post()){
-			$this->load->model('User');
 			$user_id = $this->User->register($this->input->post());
 			if($user_id){
 				$this->session->set_userdata(array('success' => "Successfully Registered! Please log in"));				
@@ -78,6 +77,15 @@ class welcome extends CI_Controller {
 		$data['friends'] = $this->User->get_friends($user_id);
 
 		$this->load->view('dashboard', $data);
+	}
+
+	public function friend(){
+		if($this->input->post()){
+			$user_id = $this->input->post('user_id');
+			$friend_id = $this->input->post('friend_id');
+			$this->User->add_friend($user_id, $friend_id);
+		}
+		redirect("/welcome/dashboard/$friend_id", 'refresh');
 	}
 
 	public function logout(){

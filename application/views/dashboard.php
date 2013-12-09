@@ -102,18 +102,17 @@
                 </div>
             </div>
         </div>
-
             <!--/#login.form-action-->
             <div id="friends" class="form-action hide">
-               <h1><?php echo $user['first_name'];?>'s Friends</h1>
-            
-                <?php if($user['friend_id']): ?>
-                    <h2>Friends: <?php echo $user['friend_id']; ?></h2>
-                <?php endif; ?>
-
-            <ul><?php foreach ($friends as $friend) {
-                    echo $friends['friend_id']; }?></ul>
-               
+            <h1><?php echo $user['first_name'];?>'s Friends</h1>    
+                <div class="todo">        
+                    <ul>
+                        <?php foreach ($friends as $friend): ?>
+                        <?php $friend_id = $friend['user_id']; ?>
+                            <a href="/index.php/welcome/dashboard/<?php echo $friend_id ?>"><li><h1><?php echo $friend['first_name'] . ' ' . $friend['last_name']; ?></h1></li></a>
+                        <?php endforeach; ?>
+                    </ul>     
+                </div>          
             </div>
             <!--/#register.form-action-->
             <div id="photos" class="form-action hide">
