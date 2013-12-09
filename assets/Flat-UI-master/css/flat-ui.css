@@ -2898,6 +2898,7 @@ input.todo-search-field {
   line-height: 23px;
   padding: 5px 0;
   text-indent: 0;
+  width: 100%!important;
   -webkit-box-shadow: none;
   box-shadow: none;
 }

@@ -57,7 +57,7 @@
                 <?php endif; ?>
             </div>
             <div>
-                <p>Wall Posts</p>
+               <!--  <p>Wall Posts</p>
                 <form action="/index.php/message/send" method="POST">
                     <ul>
                         <input type="text" placeholder="How is <?php echo $user['first_name'];?> feeling?" name="message_text"/>
@@ -65,7 +65,7 @@
                         <input type="hidden" name="receiver_id" value="<?php echo $user['user_id'] ?>"/>
                         <input type="submit" value="Update Status" class="button" />
                     </ul>
-                </form>
+                </form> -->
                 <p></p>
                 <p></p>
 
@@ -73,15 +73,15 @@
 
                     <div class="todo-search">
                         <h1>Wall Posts</h1>  
-                        <form action="/index.php/message/send" method="POST">
-                            <ul>
-                                <input class="todo-search-field" type="text" placeholder="How is <?php echo $user['first_name'];?> feeling?" name="message_text"/>
-                                <input type="hidden" name="sender_id" value="<?php echo $current_user['user_id'] ?>"/>
-                                <input type="hidden" name="receiver_id" value="<?php echo $user['user_id'] ?>"/>
-                                
-                            </ul>
-                            <input type="submit" value="Update Status" class="button" />
-                        </form>
+                            <form action="/index.php/message/send" method="POST">
+                                <input class="todo-search-field" placeholder="How is <?php echo $user['first_name'];?> feeling?" name="message_text">
+                                    <ul>
+                                        <input type="hidden" name="sender_id" value="<?php echo $current_user['user_id'] ?>"/>
+                                        <input type="hidden" name="receiver_id" value="<?php echo $user['user_id'] ?>"/>
+                                    </ul>
+                                    <p></p>
+                                <input type="submit" value="Update Status" class="btn btn-block btn-lg btn-inverse"/>
+                            </form>
                         
                     </div>    
                     <ul>
@@ -91,8 +91,8 @@
                                 <div class="todo-icon fui-user">
                                 </div>
                                 <div class="todo-content">
-                                    <h4 class="todo-name"><?php echo $message['first_name'] . ' ' . $message['last_name'] ?></h4>
-                                    <h2 class="todo-name"><?php echo $message['text'] . ' ' . $message['created_time'] ?></h2>
+                                    <a href="/index.php/welcome/dashboard/<?php echo $message['sender_id']?>"><h4 class="todo-name"><?php echo $message['first_name'] . ' ' . $message['last_name'] ?></h4></a>
+                                    <strong><h2 class="todo-name"><?php echo $message['text'] . ' ' . $message['created_time'] ?></h2></strong>
                                 </div>
                               </li>
                             <?php endforeach;?>    
