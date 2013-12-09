@@ -42,8 +42,8 @@
             <div id="login" class="form-action show">
                 <h1>Login on webapp</h1>
                 <p>
-                    Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-                    Maecenas sed diam eget risus varius bladit sit amet non
+                    If you are a registered njit student please login below!
+                    Otherwise, check out our register page.
                 </p>
                 <form action="/index.php/welcome/login" method="POST">
                     <ul>
