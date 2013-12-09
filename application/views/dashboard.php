@@ -143,7 +143,7 @@
                         <?php if($photos): ?>
                             <?php foreach ($photos as $photo): ?>
                                 <img src="<?php echo $photo['url']; ?>"></img> 
-                                <h8><?php echo $photo['caption'] ?></h8>
+                                <h8><?php echo $photo['caption']; ?></h8>
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </ul>     
