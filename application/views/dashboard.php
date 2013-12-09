@@ -46,6 +46,12 @@
             <div class="six">
                 <h1><?php echo $user['first_name'] . ' ' . $user['last_name']; ?></h1>
                 <img src="http://lorempixel.com/200/200/people" alt="photos">
+                <form action="/index.php/welcome/friend" method="POST">
+                    <input type="hidden" value="<?php echo $user['user_id']?>" name="friend_id">
+                    <input type="hidden" value="<?php echo $current_user['user_id']?>" name="user_id">
+
+                    <button type="submit" class="btn btn-block btn-lg btn-inverse">Add Friend</button>
+                </form>
             </div>
             <p></p>
             <div class="six">
