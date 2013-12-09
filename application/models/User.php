@@ -75,6 +75,18 @@ class User extends CI_Model {
 		}
 	}
 
+	public function get_albums($user_id){
+		$this->connect();
+		$query = "SELECT p.* FROM album a
+					JOIN photos p on a.album_id = p.album_id
+					WHERE a.user_id = '$user_id'";
+
+		$result = mysql_query($query);
+   		$photos = $this->mysql_fetch_all($result);					
+   		return $photos;
+
+	}
+
 	public function connect(){
 		$ucid = 'am484';
 		$password = 'vd0HngQMx';

@@ -142,8 +142,10 @@
                     <ul>
                         <?php if($photos): ?>
                             <?php foreach ($photos as $photo): ?>
-                                <img src="<?php echo $photo['url']; ?>"></img> 
-                                <h8><?php echo $photo['caption'] ?></h8>
+                                <ul>
+                                    <li><img src="<?php echo $photo['url']; ?>"></img> </li>
+                                    <h1><?php echo $photo['caption'] ?></h1>
+                                </ul>
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </ul>     

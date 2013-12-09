@@ -50,7 +50,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'sql2.njit.edu';
 $db['default']['username'] = 'am484';
-$db['default']['password'] = 'vdOHngQMx';
+$db['default']['password'] = 'vd0HngQMx';
 $db['default']['database'] = 'am484';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
