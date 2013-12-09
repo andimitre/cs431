@@ -52,6 +52,18 @@ class User extends CI_Model {
 		}
 	}
 
+	public function get_friends($user_id){
+		$this->connect();
+		$query = "SELECT u.* FROM friends f
+			join user u ON f.friend_id = u.user_id
+			where f.user_id = '$user_id'";
+
+		$result = mysql_query($query);
+   		$friends = $this->mysql_fetch_all($result);
+   		
+   		return $friends;
+	}
+
 	public function connect(){
 		$ucid = 'am484';
 		$password = 'vd0HngQMx';
@@ -61,6 +73,14 @@ class User extends CI_Model {
 		    die('Unable to connect. Please try again! ' . mysql_error());
 		}
 		mysql_select_db($ucid);
+	}
+
+	private function mysql_fetch_all($result) {
+		$response = array();
+		while($row=mysql_fetch_assoc($result)) {	     
+	       array_push($response, $row);
+	   	}
+	    return $response;
 	}
 
 }

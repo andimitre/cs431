@@ -75,6 +75,8 @@ class welcome extends CI_Controller {
 
 		$data['messages'] = $this->Wall_message->get_for_user($user_id);
 
+		$data['friends'] = $this->User->get_friends($user_id);
+
 		$this->load->view('dashboard', $data);
 	}
 
