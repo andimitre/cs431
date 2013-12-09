@@ -91,8 +91,8 @@
                                 <div class="todo-icon fui-user">
                                 </div>
                                 <div class="todo-content">
-                                    <a href="/index.php/welcome/dashboard/<?php echo $message['sender_id']?>"><h4 class="todo-name"><?php echo $message['first_name'] . ' ' . $message['last_name'] ?></h4></a>
-                                    <strong><h2 class="todo-name"><?php echo $message['text'] . ' ' . $message['created_time'] ?></h2></strong>
+                                    <a href="/index.php/welcome/dashboard/<?php echo $message['sender_id']?>"><h1><?php echo $message['first_name'] . ' ' . $message['last_name'] ?></h1></a>
+                                    <strong><h2 class="todo-name"><?php echo $message['text']?></h2></strong>
                                 </div>
                               </li>
                             <?php endforeach;?>    
