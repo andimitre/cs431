@@ -45,25 +45,38 @@
         </ul>
 
         <div id="wall" class="form-action show">
-            <div class="six">
+            <div class="six columns">
                 <h1><?php echo $user['first_name'] . ' ' . $user['last_name']; ?></h1>
-                <img src="http://lorempixel.com/200/200/people" alt="photos">
+                <img class="round" src="http://lorempixel.com/200/200/people" alt="photos">
+                <p></p>
                 <form action="/index.php/welcome/friend" method="POST">
                     <input type="hidden" value="<?php echo $user['user_id']?>" name="friend_id">
                     <input type="hidden" value="<?php echo $current_user['user_id']?>" name="user_id">
 
-                    <button type="submit" class="btn btn-block btn-lg btn-inverse">Add Friend</button>
+                    
                 </form>
             </div>
             <p></p>
-            <div class="six">
-                <?php if($user['hometown_city']): ?>
-                    <h2>Hometown: <?php echo $user['hometown_city'] . ', ' . $user['hometown_state']; ?></h2>
-                <?php endif; ?>
-                <?php if($user['current_city']): ?>
-                    <h2>Current: <?php echo $user['current_city'] . ', ' . $user['current_state']; ?></h2>
-                <?php endif; ?>
+            <div class="six columns move">
+                <form>
+                    <?php if($user['hometown_city']): ?>
+                        <h2>Hometown: <?php echo $user['hometown_city'] . ', ' . $user['hometown_state']; ?></h2>
+                    <?php endif; ?>
+                    <?php if($user['current_city']): ?>
+                        <h2>Current: <?php echo $user['current_city'] . ', ' . $user['current_state']; ?></h2>
+                    <?php endif; ?>
+                    <p></p>
+                    
+
+                    <button type="submit" class="btn btn-block btn-lg btn-inverse ">Add Friend</button>
+                </form>
             </div>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
             <div>
                <!--  <p>Wall Posts</p>
                 <form action="/index.php/message/send" method="POST">
@@ -122,26 +135,20 @@
                     </ul>     
                 </div>          
             </div>
-            <!--/#register.form-action-->
+            <!--/#photos.form-action-->
             <div id="photos" class="form-action hide">
-                <h4></h4>
-                <p>
-                    Here's all your photos
-                    <?php $username ?>
-                </p>
-                <form action="/register" method="POST">
+                <h1><?php echo $user['first_name'];?>'s Photos</h1>    
+                <div class="todo">        
                     <ul>
-                        <li>
-                            <input type="text" placeholder="Username" />
-                        </li>
-                        <li>
-                            <input type="password" placeholder="Password" />
-                        </li>
-                        <li>
-                            <input type="submit" value="Sign Up" class="button" />
-                        </li>
-                    </ul>
-                </form>
+                        <?php if($photos): ?>
+                            <?php foreach ($photos as $photo): ?>
+                                <img src="<?php echo $photo['url']; ?>"></img> 
+                                <h8><?php echo $photo['caption'] ?></h8>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </ul>     
+                </div> 
+                
             </div>
             <!--/#events-->
             <div id="events" class="form-action hide">
