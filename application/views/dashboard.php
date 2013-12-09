@@ -28,7 +28,7 @@
 <body>
     <div class="container">
         <ul class="tabs">
-            <li>
+            <a href="/index.php/welcome/dashboard/<?php echo $current_user['user_id'] ?>"><li>Home</li></a><li>
                 <a href="#wall" class="active">Wall</a>
             </li>
             <li>
@@ -40,6 +40,8 @@
             <li>
                 <a href="#events">Events</a>
             </li>
+            <a href="/index.php/welcome/logout"><li>Logout</li></a><li>
+            
         </ul>
 
         <div id="wall" class="form-action show">
