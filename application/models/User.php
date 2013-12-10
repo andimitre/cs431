@@ -88,6 +88,19 @@ class User extends CI_Model {
 
 	}
 
+	public function get_events($user_id){
+		$this->connect();
+		$query = "SELECT *
+					FROM events 
+					left outer JOIN user  on  events.user_id = user.user_id
+					WHERE events.user_id = '$user_id'";
+
+		$result = mysql_query($query);
+   		$events = $this->mysql_fetch_all($result);					
+   		return $events;
+
+	}
+
 	public function connect(){
 		$ucid = 'am484';
 		$password = 'vd0HngQMx';

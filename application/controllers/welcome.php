@@ -78,6 +78,8 @@ class welcome extends CI_Controller {
 
 		$data['photos'] = $this->User->get_albums($user_id);
 
+		$data['events'] = $this->User->get_events($user_id);
+
 		$this->load->view('dashboard', $data);
 	}
 

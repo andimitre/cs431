@@ -156,7 +156,18 @@
             <!--/#events-->
             <div id="events" class="form-action hide">
                 <h1><?php echo $user['first_name'];?>'s Events</h1>    
+                
                 <div class="todo">        
+                    <ul>
+                        <?php foreach ($events as $event): ?>
+                        <?php $event_id = $event['user_id']; ?>
+                            <a href="/index.php/welcome/dashboard/<?php echo $event_id ?>"><li><h1><?php echo $event['name'] . ' ' . $event['event_type'] . ' ' . $event['description'] . ' ' . $event['start_time']; ?></h1></li></a>
+                        <?php endforeach; ?>
+                    </ul>     
+                </div> 
+
+
+                <!-- <div class="todo">        
                     <ul>
 
                         <ul>
@@ -175,7 +186,7 @@
                         </ul>
        
                     </ul>     
-                </div> 
+                </div>  -->
 
             </div>
         </div>
