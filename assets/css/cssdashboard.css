@@ -80,6 +80,10 @@ body {
 .container{
   background-color: #BDC3C7;
 }
+.resized{
+  height: 280px;
+  width: 280px;
+}
 .round{
   border-radius: 10px;
 }

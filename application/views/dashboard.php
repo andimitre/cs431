@@ -47,7 +47,7 @@
         <div id="wall" class="form-action show">
             <div class="six columns">
                 <h1><?php echo $user['first_name'] . ' ' . $user['last_name']; ?></h1>
-                <img class="round" src="http://lorempixel.com/200/200/people" alt="photos">
+                <img class="round resized" src="<?php echo $user['url']; ?>" alt="photos">
                 <p></p>
                 <form action="/index.php/welcome/friend" method="POST">
                     <input type="hidden" value="<?php echo $user['user_id']?>" name="friend_id">
