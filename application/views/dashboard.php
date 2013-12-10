@@ -145,6 +145,7 @@
                                 <ul>
                                     <li><img src="<?php echo $photo['url']; ?>"></img> </li>
                                     <h1><?php echo $photo['caption'] ?></h1>
+
                                 </ul>
                             <?php endforeach; ?>
                         <?php endif; ?>
@@ -154,24 +155,28 @@
             </div>
             <!--/#events-->
             <div id="events" class="form-action hide">
-                <h4></h4>
-                <p>
-                    Here's all your photos
-                    <?php $username ?>
-                </p>
-                <form action="/register" method="POST">
+                <h1><?php echo $user['first_name'];?>'s Events</h1>    
+                <div class="todo">        
                     <ul>
-                        <li>
-                            <input type="text" placeholder="Username" />
-                        </li>
-                        <li>
-                            <input type="password" placeholder="Password" />
-                        </li>
-                        <li>
-                            <input type="submit" value="Sign Up" class="button" />
-                        </li>
-                    </ul>
-                </form>
+
+                        <ul>
+                            <li>
+                                <h1>Njit Holiday Party</h1>
+                                <h3 class="event_text">Status: Attending</h3>
+                                <h3 class="event_text">Date: 12/20/2013 at 5:00pm</h3>
+                                <h3 class="event_text">Location: 500 Park Ave. New York, NY 01064</h3>
+                            </li>
+                            <li>
+                                <h1>Andi's Birthday party</h1>
+                                <h3 class="event_text">Status: Not Attending</h3>
+                                <h3 class="event_text">Date: 1/12/2014 at 3:00pm</h3>
+                                <h3 class="event_text">Location: Chuckie Cheese, 241 Central Ave. Nutley NJ 07011</h3>
+                            </li>
+                        </ul>
+       
+                    </ul>     
+                </div> 
+
             </div>
         </div>
     <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
