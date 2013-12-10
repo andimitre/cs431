@@ -6,6 +6,11 @@ body {
   font-family: 'Roboto';
 }
 
+.event_text{
+  font-size:25px;
+  padding:5px
+}
+
 .message{
   background: #ffffff;
   border-radius: 2px;
